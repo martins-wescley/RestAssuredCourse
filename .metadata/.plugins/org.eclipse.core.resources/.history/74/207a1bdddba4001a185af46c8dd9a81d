@@ -1,0 +1,21 @@
+package br.rj.wmartins.rest.tests;
+
+import static io.restassured.RestAssured.*;
+
+import org.hamcrest.Matchers;
+import org.junit.Test;
+
+import br.rj.wmartins.rest.core.BaseTest;
+
+public class BarrigaTest extends BaseTest{
+
+	@Test
+	public void nãoDeveAcessarAPISemToken() {
+		given()
+		.when()
+			.get("http://barrigarest.wcaquino.me/contas")
+		.then()
+		.log().all()
+		.statusCode(401);
+	}
+}

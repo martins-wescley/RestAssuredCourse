@@ -1,0 +1,47 @@
+package br.rj.wmartins.rest.tests;
+
+import static io.restassured.RestAssured.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.hamcrest.Matchers;
+import org.junit.Test;
+
+import br.rj.wmartins.rest.core.BaseTest;
+
+public class BarrigaTest extends BaseTest{
+
+	@Test
+	public void nãoDeveAcessarAPISemToken() {
+		given()
+		.when()
+			.get("/contas")
+		.then()
+		.log().all()
+		.statusCode(401);
+	}
+	
+	@Test
+	public void deveIncluirContaComSucesso() {
+		Map<String, String> login = new HashMap<String, String>();
+		login.put("email", "wescleymartins02@gmail.com");
+		login.put("senha", "digimon02@");
+		
+		String token = given()
+			.body(login)
+		.when()
+			.post("/signin")
+		.then()
+		.statusCode(200)
+		.extract().path("token");
+		
+		given()
+		.header("Authorization", "JWT " + token)
+			.body("{ \"nome\": \"Conta Qualquer\" }")
+		.when()
+			.post("/contas")
+		.then()
+			.statusCode(201);
+	}
+}

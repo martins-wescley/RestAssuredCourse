@@ -1,0 +1,5 @@
+package br.rj.wmartins.rest.core;
+
+public class BaseTest implements Contantes {
+
+}

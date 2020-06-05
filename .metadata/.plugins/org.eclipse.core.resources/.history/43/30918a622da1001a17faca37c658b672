@@ -1,0 +1,20 @@
+package br.rj.wmartins.rest;
+
+import static io.restassured.RestAssured.*;
+
+import org.junit.Test;
+
+
+public class FileTest {
+
+	@Test
+	public void deveObrigarEnvioArquivo() {
+		given()
+			.log().all()
+		.when()
+			.post("http://restapi.wcaquino.me/upload")
+		.then()
+			.log().all()
+			.statusCode(400);
+	}
+}

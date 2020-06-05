@@ -1,0 +1,19 @@
+package br.rj.wmartins.rest;
+
+import static io.restassured.RestAssured.*;
+
+import org.junit.Test;
+
+public class AuthTest {
+	
+	@Test
+	public void deveAcessarSWAPI() {
+		given()
+			.log().all()
+		.when()
+			.get("https://swapi.dev/")
+		.then()
+			.log().all()
+			.statusCode(200);
+	}
+}

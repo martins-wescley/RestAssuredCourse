@@ -1,0 +1,5 @@
+package br.rj.wmartins.rest.core.refact.suite;
+
+public class Suite {
+
+}

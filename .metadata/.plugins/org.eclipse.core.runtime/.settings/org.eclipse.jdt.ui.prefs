@@ -1,0 +1,10 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaPostfixProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.javaChainProposalCategory\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="io.restassured.http.Method"/><rhs name\="io.restassured.filter.log.LogDetail"/><rhs name\="javax.xml.bind.annotation.XmlAccessType"/><rhs name\="io.restassured.http.ContentType"/></lhs><lhs name\="io.restassured.path.json.JsonPath"><rhs name\="io.restassured.path.json.JsonPath"/></lhs><lhs name\="io.restassured.builder.RequestSpecBuilder"><rhs name\="io.restassured.builder.RequestSpecBuilder"/></lhs><lhs name\="java.util.Map"><rhs name\="java.util.HashMap"/></lhs><lhs name\="br.rj.wmartins.rest.User"><rhs name\="br.rj.wmartins.rest.User"/></lhs><lhs name\="java.io.File"><rhs name\="java.io.File"/></lhs><lhs name\="java.io.Closeable"><rhs name\="java.io.FileOutputStream"/></lhs><lhs name\="java.lang.AutoCloseable"><rhs name\="java.io.FileOutputStream"/></lhs><lhs name\="java.io.Flushable"><rhs name\="java.io.FileOutputStream"/></lhs><lhs name\="java.io.OutputStream"><rhs name\="java.io.FileOutputStream"/></lhs><lhs name\="io.restassured.path.xml.XmlPath"><rhs name\="io.restassured.path.xml.XmlPath"/></lhs><lhs name\="br.rj.wmartins.rest.tests.Movimentacao"><rhs name\="br.rj.wmartins.rest.tests.Movimentacao"/></lhs></history>
+content_assist_number_of_computers=18
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+org.eclipse.jdt.ui.formatterprofiles.version=18
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

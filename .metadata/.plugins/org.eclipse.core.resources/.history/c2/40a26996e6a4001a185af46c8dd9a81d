@@ -1,0 +1,5 @@
+package br.rj.wmartins.rest.tests;
+
+public class Movimentacao {
+
+}

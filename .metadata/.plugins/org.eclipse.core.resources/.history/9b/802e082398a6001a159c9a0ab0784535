@@ -1,0 +1,5 @@
+package br.rj.wmartins.rest.utils;
+
+public class BarrigaUtils {
+
+}

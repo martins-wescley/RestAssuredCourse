@@ -1,0 +1,65 @@
+package br.rj.wmartins.rest.tests;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import br.rj.wmartins.rest.core.BaseTest;
+
+public class BarrigaTest extends BaseTest{
+
+	private String TOKEN;
+	
+	@Before
+	public void login() {
+		Map<String, String> login = new HashMap<String, String>();
+		login.put("email", "wescleymartins02@gmail.com");
+		login.put("senha", "digimon02@");
+		
+		TOKEN = given()
+			.body(login)
+		.when()
+			.post("/signin")
+		.then()
+		.statusCode(200)
+		.extract().path("token");
+	}
+	
+	@Test
+	public void nãoDeveAcessarAPISemToken() {
+		given()
+		.when()
+			.get("/contas")
+		.then()
+		.log().all()
+		.statusCode(401);
+	}
+	
+	@Test
+	public void deveIncluirContaComSucesso() {
+		given()
+		.header("Authorization", "JWT " + TOKEN)
+			.body("{ \"nome\": \"Conta Teste Token\" }")
+		.when()
+			.post("/contas")
+		.then()
+			.statusCode(201);
+	}
+	
+	@Test
+	public void deveAlterarContaComSucesso() {
+		given()
+		.header("Authorization", "JWT " + TOKEN)
+			.body("{ \"nome\": \"Conta Alterada\" }")
+		.when()
+			.put("/contas/173060")
+		.then()
+			.statusCode(200)
+			.body("nome", is("Conta Alterada"));
+	}
+}

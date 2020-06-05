@@ -1,0 +1,20 @@
+package br.rj.wmartins.rest.core.refact.suite;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite.SuiteClasses;
+
+import br.rj.wmartins.rest.tests.refact.AuthTest;
+import br.rj.wmartins.rest.tests.refact.ContasTest;
+import br.rj.wmartins.rest.tests.refact.MovimentacaoTest;
+import br.rj.wmartins.rest.tests.refact.SaldoTest;
+
+@RunWith(org.junit.runners.Suite.class)
+@SuiteClasses({
+	ContasTest.class,
+	MovimentacaoTest.class,
+	SaldoTest.class,
+	AuthTest.class
+})
+public class Suite {
+
+}
